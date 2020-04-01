@@ -60,3 +60,4 @@ C:\Github\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.0\System.IdentityModel.T
 C:\Github\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Github\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.dll
 C:\Github\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Github\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.0\Data\UserSeedData.json
