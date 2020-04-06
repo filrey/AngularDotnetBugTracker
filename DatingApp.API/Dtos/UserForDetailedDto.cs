@@ -10,8 +10,6 @@ namespace DatingApp.API.Dtos
 
         public string Username { get; set; }
 
-
-
         public string Gender { get; set; }
 
         public int Age { get; set; }
@@ -35,7 +33,7 @@ namespace DatingApp.API.Dtos
 
         public string PhotoUrl { get; set; }
 
-        public ICollection<Photo> Photos { get; set; }
+        public ICollection<PhotosForDetailedDto> Photos { get; set; }
 
     }
 }
