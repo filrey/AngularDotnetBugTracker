@@ -1,0 +1,5 @@
+In order to recover from wonky migrations try this:
+1: run dotnet ef database drop to remove current database
+2: run 'dotnet ef migrations remove' to remove all migrations
+3: run 'dotnet ef migrations add initialCommit'
+4: run 'dotnet ef database update'
