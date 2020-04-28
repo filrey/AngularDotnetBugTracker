@@ -31,10 +31,12 @@ import { MemberCardComponent } from './members/member-list/member-card/member-ca
 import { MemberDetailComponent } from './members/member-list/member-detail/member-detail.component';
 import { MemberEditComponent } from './members/member-list/member-edit/member-edit.component';
 import { PhotoEditorComponent } from './members/member-list/photo-editor/photo-editor.component';
+import { MemberMessagesComponent } from './members/member-list/member-messages/member-messages.component';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_gaurds/prevent-unsaved-changes.guard';
+import { MessagesResolver } from './_resolvers/messages.resolver';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -52,6 +54,7 @@ export function tokenGetter() {
     MemberCardComponent,
     MemberDetailComponent,
     MemberEditComponent,
+    MemberMessagesComponent,
     PhotoEditorComponent
   ],
   imports: [
@@ -85,7 +88,8 @@ export function tokenGetter() {
     MemberListResolver,
     MemberEditResolver,
     PreventUnsavedChanges,
-    ListsResolver
+    ListsResolver,
+    MessagesResolver
   ],
   bootstrap: [AppComponent]
 })
