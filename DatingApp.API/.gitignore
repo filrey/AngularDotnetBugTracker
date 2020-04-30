@@ -6,6 +6,7 @@ appsettings.json
 /dist
 /tmp
 /out-tsc
+/wwwroot
 # Only exists if Bazel was run
 /bazel-out
 
