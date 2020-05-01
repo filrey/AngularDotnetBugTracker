@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+<nav class="navbar navbar-expand-md navbar-light">
   <div class="container">
-    <a class="navbar-brand" [routerLink]="['/home']">Luv App</a>
+    <a class="navbar-brand" [routerLink]="['/home']">
+      Luv App <i class="fa fa-heart heart"></i
+    ></a>
 
     <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
@@ -16,7 +18,7 @@
 
     <div *ngIf="loggedIn()" class="dropdown" dropdown>
       <span class="mr-1">
-        <img src="{{ photoUrl || '../../assets/user.png' }}" alt=""
+        <img src="{{ photoUrl || '../../assets/placeholder.jpg' }}" alt=""
       /></span>
       <a class="dropdown-toggle text-light" dropdownToggle>
         Welcome {{ authService.decodedToken.unique_name | titlecase }}
