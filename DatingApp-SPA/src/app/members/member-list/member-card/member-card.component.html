@@ -7,18 +7,24 @@
     />
     <ul class="list-inline member-icons animate text-center">
       <li class="list-inline-item">
-        <button class="btn btn-primary" [routerLink]="['/members/', user.id]">
+        <button
+          class="btn btn-danger btn-just-icon"
+          [routerLink]="['/members/', user.id]"
+        >
           <i class="fa fa-user"></i>
         </button>
       </li>
       <li class="list-inline-item">
-        <button class="btn btn-primary" (click)="sendLike(user.id)">
+        <button
+          class="btn btn-danger btn-just-icon"
+          (click)="sendLike(user.id)"
+        >
           <i class="fa fa-heart"></i>
         </button>
       </li>
       <li class="list-inline-item">
         <button
-          class="btn btn-primary"
+          class="btn btn-danger btn-just-icon"
           [routerLink]="['/members/', user.id]"
           [queryParams]="{ tab: 3 }"
         >

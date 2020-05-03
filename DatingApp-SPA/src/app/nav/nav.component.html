@@ -1,72 +1,130 @@
-<nav class="navbar navbar-expand-md navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light" color-on-scroll="500">
   <div class="container">
-    <a class="navbar-brand" [routerLink]="['/home']">
-      Luv App <i class="fa fa-heart heart"></i
-    ></a>
-
-    <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/members']">Matches </a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/lists']">Lists</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/messages']">Messages</a>
-      </li>
-    </ul>
-
-    <div *ngIf="loggedIn()" class="dropdown" dropdown>
-      <span class="mr-1">
-        <img src="{{ photoUrl || '../../assets/placeholder.jpg' }}" alt=""
-      /></span>
-      <a class="dropdown-toggle text-light" dropdownToggle>
-        Welcome {{ authService.decodedToken.unique_name | titlecase }}
-      </a>
-
-      <div class="dropdown-menu mt-3" *dropdownMenu>
-        <a class="dropdown-item" [routerLink]="['/member/edit']">
-          <i class="fa fa-user"></i> Edit Profile</a
-        >
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" (click)="logout()">
-          <i class="fa fa-sign-out"></i>Logout</a
-        >
-      </div>
-    </div>
-
-    <form
-      *ngIf="!loggedIn()"
-      #loginForm="ngForm"
-      class="form-inline my-2 my-lg-0"
-      (ngSubmit)="login()"
-    >
-      <input
-        class="form-control mr-sm-2"
-        type="text"
-        name="username"
-        placeholder="Username"
-        required
-        [(ngModel)]="model.username"
-        [ngModelOptions]="{ standalone: true }"
-      />
-      <input
-        class="form-control mr-sm-2"
-        type="password"
-        bame="password"
-        placeholder="Password"
-        required
-        [(ngModel)]="model.password"
-        [ngModelOptions]="{ standalone: true }"
-      />
-
+    <div class="navbar-translate">
+      <a class="navbar-brand" [routerLink]="['/home']"
+        >Luv App <i class="fa fa-heart heart"></i
+      ></a>
       <button
-        [disabled]="!loginForm.valid"
-        class="btn btn-success my-2 my-sm-0"
-        type="submit"
+        class="navbar-toggler navbar-burger float-right"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarToggler"
+        aria-controls="navbarTogglerDemo02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        (click)="sidebarToggle()"
       >
-        Login
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
       </button>
-    </form>
+    </div>
+    <div class="navbar-collapse" id="navbarToggler">
+      <ul *ngIf="loggedIn()" class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            rel="tooltip"
+            title="See potential matches"
+            data-placement="bottom"
+            [routerLink]="['/members']"
+          >
+            <i class="fa fa-search"></i>
+            Matches
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            rel="tooltip"
+            title="See who's already liked you"
+            data-placement="bottom"
+            [routerLink]="['/lists']"
+          >
+            <i class="fa fa-heart"></i>
+            Likes
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            rel="tooltip"
+            title="See your messages or send one"
+            data-placement="bottom"
+            [routerLink]="['/messages']"
+          >
+            <i class="fa fa-inbox"></i>
+            Messages
+          </a>
+        </li>
+        <li class="nav-item display-box">
+          <img
+            class="img-rounded img-responsive img-helper"
+            src="{{ photoUrl || '../../assets/placeholder.jpg' }}"
+            alt=""
+          />
+          <a
+            class="nav-link"
+            rel="tooltip"
+            title="Edit your profile"
+            data-placement="bottom"
+            [routerLink]="['/member/edit']"
+          >
+            <!-- <i class="fa fa-user"></i> -->
+            {{ authService.decodedToken.unique_name | titlecase }}'s' Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            rel="tooltip"
+            title="Sign out"
+            data-placement="bottom"
+            href=""
+            (click)="logout()"
+          >
+            <i class="fa fa-sign-out"></i>
+            Logout
+          </a>
+        </li>
+      </ul>
+      <ul *ngIf="!loggedIn()" class="navbar-nav ml-auto">
+        <li class="nav-item" *ngIf="!isDocumentation()">
+          <form
+            *ngIf="!loggedIn()"
+            #loginForm="ngForm"
+            class="form-inline my-2 my-lg-0"
+            (ngSubmit)="login()"
+          >
+            <input
+              class="form-control mr-sm-2"
+              type="text"
+              name="username"
+              placeholder="Username"
+              required
+              [(ngModel)]="model.username"
+              [ngModelOptions]="{ standalone: true }"
+            />
+            <input
+              class="form-control mr-sm-2"
+              type="password"
+              bame="password"
+              placeholder="Password"
+              required
+              [(ngModel)]="model.password"
+              [ngModelOptions]="{ standalone: true }"
+            />
+
+            <button
+              [disabled]="!loginForm.valid"
+              class="btn btn-danger btn-round my-2 my-sm-0"
+              type="submit"
+            >
+              Login
+            </button>
+          </form>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

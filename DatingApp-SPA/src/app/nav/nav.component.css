@@ -8,3 +8,12 @@ img {
   border: 2px solid white;
   display: inline;
 }
+
+.img-helper {
+  position: relative;
+  top: 8px;
+}
+
+.display-box {
+  display: -webkit-box;
+}

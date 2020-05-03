@@ -42,12 +42,16 @@
         </option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary" style="margin-left:10px">
+    <button
+      type="submit"
+      class="btn btn-primary btn-round"
+      style="margin-left:10px"
+    >
       Apply Filters
     </button>
     <button
       type="button"
-      class="btn btn-info"
+      class="btn btn-info btn-round"
       (click)="resetFilters()"
       style="margin-left:10px"
     >
@@ -58,7 +62,7 @@
         <button
           type="button"
           name="orderBy"
-          class="btn btn-primary"
+          class="btn btn-primary btn-round"
           [(ngModel)]="userParams.orderBy"
           (click)="loadUsers()"
           btnRadio="lastActive"
@@ -68,7 +72,7 @@
         <button
           type="button"
           name="orderBy"
-          class="btn btn-primary"
+          class="btn btn-primary btn-round"
           [(ngModel)]="userParams.orderBy"
           (click)="loadUsers()"
           btnRadio="created"
