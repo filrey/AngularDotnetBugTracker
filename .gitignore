@@ -6,6 +6,7 @@
 /out-tsc
 bin
 /wwwroot
+*.db
 # Only exists if Bazel was run
 /bazel-out
 
