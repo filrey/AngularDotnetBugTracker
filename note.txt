@@ -5,7 +5,7 @@ In order to recover from wonky migrations try this:
 4: run 'dotnet ef database update'
 
 Running in Prod
-1: NG build the SPA to wwwroot in DatingApp.API
+1: NG build --prod the SPA to wwwroot in DatingApp.API
 2: Set "ASPNETCORE_ENVIRONMENT": "Production" in launchSettings.json
 3: Set Azure Credentials in appsettings.json
 4: use in cmd <set ASPNETCORE_ENVIRONMENT=Production> before running migrations
